@@ -1,0 +1,9 @@
+{
+    "produtos": [{
+        "id": 1,
+        "nome": "Café",
+        "descricao": "Café em grãos",
+        "preco": 7.89,
+        "imagem": "./assets/cafe.jpg"
+    }]
+}

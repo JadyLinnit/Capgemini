@@ -1,0 +1,40 @@
+{
+    "contatos": [{
+            "id": 1,
+            "nome": "Maria",
+            "fone": "345-9087",
+            "email": "maria@gmail.com"
+        },
+        {
+            "id": 2,
+            "nome": "João",
+            "fone": "112-4567",
+            "email": "joao@gmail.com"
+        },
+        {
+            "id": 3,
+            "nome": "Joana",
+            "fone": "5689-0987",
+            "email": "joana@gmail.com"
+        },
+        {
+            "nome": "Jady",
+            "fone": "47 98851-1764",
+            "email": "jady@gmail.com",
+            "id": 4
+        },
+        {
+            "nome": "Vitor",
+            "fone": "47 98851-1764",
+            "email": "vitor@gmail.com",
+            "id": 5
+        },
+        {
+            "nome": "José",
+            "fone": "(47)99087-0987",
+            "email": "jose@gmail.com",
+            "id": 6
+        }
+    ]
+
+}

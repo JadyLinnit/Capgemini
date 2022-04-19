@@ -1,0 +1,82 @@
+.item1 {
+    grid-area: area1;
+}
+
+.item2 {
+    grid-area: area2;
+}
+
+.item3 {
+    grid-area: area3;
+}
+
+.item4 {
+    grid-area: area4;
+}
+
+.item5 {
+    grid-area: area5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 30% auto 30%;
+    grid-template-areas: 'area1 area1 area1 area1 area1'
+        'area2 area3 area3 area3 area4'
+        'area5 area5 area5 area5 area5';
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+* {
+    margin: 0;
+}
+
+nav {
+    background-color: silver;
+    padding: 10px;
+    z-index: 0;
+}
+
+li.showcadastro {
+    display: inline-block
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.drop-content a {
+    text-decoration: none;
+    display: block;
+}
+
+li.showcadastro:hover .drop-content {
+    display: block;
+}
+
+.showcadastro a {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.drop-content a {
+    background-color: red;
+    margin-top: 10px;
+}
+
+.drop-content li {
+    list-style-type: none;
+}

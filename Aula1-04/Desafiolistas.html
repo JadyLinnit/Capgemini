@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Div</title>
+    <style>
+        body {
+            background-color: lightslategray;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            border: 1px solid rosybrown;
+            width: 100%;
+            display: inline-block;
+        }
+        div p {
+            color: black
+        }
+        .lista1 {
+            width: 49%;
+            background-color: blanchedalmond;
+        }
+        .lista2 {
+            width: 50%;
+            background-color: rgb(103, 200, 224);
+        }
+
+        .container{
+            box-sizing: border-box;
+            border: 1px solid aquamarine;
+        }
+
+        .container p {
+            color: black;
+        }
+
+        ul.a {
+            list-style-type: circle;
+        }   
+
+        ul.b {
+            list-style-type: square;
+        }
+
+        ol.c {
+            list-style-type: upper-roman;
+        }
+        
+    </style>
+    </head>
+     <body>
+    <div class="container">
+        <div class="lista1">
+            <p><center> Unorderd Lists</center></p>
+            <ul class="a">
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Coca Cola</li>
+            </ul>
+
+            <ul class="b">
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Coca Cola</li>
+            </ul>
+        </div>
+
+        <div class="lista2">
+            <p> <center>Orderd Lists</center></p>
+            <ol>
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Coca Cola</li>
+            </ol>
+
+            <ol class="c">
+                <li>Café</li>
+                <li>Chá</li>
+                <li>Coca Cola</li>
+            </ol>
+        </div>
+    </div>
+    
+</body>
+</html>

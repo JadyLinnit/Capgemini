@@ -1,0 +1,15 @@
+{
+    "clientes": [
+      {
+        "nome": "Jady Linnit",
+        "cep": "78068-475",
+        "rua": "Rua Presidente",
+        "numero": "170",
+        "complemento": "Casa",
+        "bairro": "Boa Esperança",
+        "cidade": "Recife",
+        "uf": "PE",
+        "id": 1
+      }
+    ]
+  }

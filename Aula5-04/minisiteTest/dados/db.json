@@ -1,0 +1,20 @@
+{
+    "categorias": [{
+            "id": 1,
+            "nome": "Livros de romance"
+        },
+        {
+            "id": 2,
+            "nome": "Livros educacionais"
+        },
+        {
+            "id": 3,
+            "nome": "Livros de ficção"
+        },
+        {
+            "id": 4,
+            "nome": "Livros de desenvolvimento"
+        }
+    ],
+    "produtos": []
+}
