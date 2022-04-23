@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    margin: 5px;
+}
+
+table{
+    width:300px;
+    margin: 5px;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: rgb(198, 250, 233);
+    color: palevioletred;
+    text-align: left;
+}
+
+
+
+tbody tr:hover{
+    background-color: rgb(198, 250, 233);
+    color:  palevioletred;
+}
