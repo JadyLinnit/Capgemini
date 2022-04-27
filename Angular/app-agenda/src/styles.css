@@ -1,0 +1,35 @@
+.container {
+    width: 600px;
+    margin: auto;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+button {
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.btsalva {
+    background-color: blue;
+    color: white;
+}
+
+.btsalva:hover {
+    background-color: white;
+    color: blue;
+}
+
+.btcancela {
+    background-color: orangered;
+    color: white;
+}
+
+.btcancela:hover {
+    background-color: white;
+    color: orangered;
+}

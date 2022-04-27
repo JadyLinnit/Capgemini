@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../scripts/ControllerProduto.js"></script>
+</head>
+
+<body onload="load()">
+    <div class="container">
+        <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="produtos">
+                <!--Preenchidos pela callback-->
+            </tbody>
+        </table>
+        </div>
+    <div>
+        <input type="text" placeholder="Informe seu nome" id="nomeCliente"/>
+        <button onclick="FinalizarCarrinho()">Finalizar carrinho</button>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>R$ Unitário</th>
+                    <th>Qtde</th>
+                    <th>Subtotal</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="itensCarrinho">
+
+            </tbody>
+        </table>
+        <hr>
+        <label id="totalCarrinho"></label>
+    </div>
+</div>
+
+    <script>
+        var carrinho = new Carrinho('22/04/2022', 'Navegante');
+
+        function load() {
+            let x = new ModelProduto();
+            x.consultarTodos(displayTabela)
+        }
+
+        function inserirItem(dados) {
+            /*dados -> é o produto agregado ao item*/
+            let it = new Item(dados, dados.preco, 1);
+            //chama gravar item
+            addItemCarrinho(it)
+        }
+
+        function efetivarGravacaoItem(idproduto) {
+            let x = new ModelProduto();
+            x.consultarPorId(idproduto, inserirItem)
+        }
+
+        function FinalizarCarrinho(){
+            var nomeCliente = document.getElementById("nomeCliente")
+            if (nomeCliente.value === '') {
+                alert("informe nome do cliente")
+                nomeCliente.focus()
+                return;
+            }
+            carrinho.finalizado = true
+            carrinho.cliente = nomeCliente.value
+            let x = new ModelCarrinho()
+            x.salvar(carrinho)
+        }
+
+        function addItemCarrinho(item){
+            if(!itemJaExiste(item)){
+                carrinho.add(item)
+            }
+            showCarrinho(carrinho)
+        }
+
+        function itemJaExiste(it){
+            for(let i=0; i <carrinho.itens.length; i++){
+              if(it.produto.id == carrinho.itens[i].produto.id){
+                  carrinho.itens[i].qtde +=1;
+
+                  return true;
+              }
+            }
+            return false
+        }
+
+        function inserir() {
+            /*controller*/
+            var obj = {
+                    descricao: 'farinha',
+                    preco: 10,
+                    estoque: 150
+                }
+                /*Model -Acessa os dados onde estão armazenados ou envia da view para o db*/
+            let x = new ModelProduto();
+            x.salvar(obj);
+        }
+
+        function showCarrinho(dados){
+            let trs= '';
+            let soma = 0;
+            for (let i = 0; i < dados.itens.length; i++){
+                trs +=`
+                <tr>
+                    <td>${dados.itens[i].produto.descricao}</td>
+                    <td>${dados.itens[i].precoItem}</td>
+                    <td>${dados.itens[i].qtde}</td>
+                    <td>${(dados.itens[i].qtde * dados.itens[i].precoItem).toFixed(2)}</td>
+                    <td><button onclick=removerItem(${dados.itens[i].produto.id})>-</button></td>
+                  </tr>
+                `
+
+                soma += (dados.itens[i].qtde * dados.itens[i].precoItem)
+            }
+            document.getElementById("itensCarrinho").innerHTML = trs;
+            document.getElementById("totalCarrinho").innerHTML = ` Total R$: <span>${soma}</span>`
+        }
+
+        function removerItem(idproduto){
+            for(let i = 0; i < carrinho.itens.length; i++){
+                if(idproduto == carrinho.itens[i].produto.id){
+                    if(carrinho.itens[i].qtde == 1){
+                        carrinho.itens.splice(i, 1)
+                    }
+                    else{
+                        carrinho.itens[i].qtde -= 1;
+                    }
+                }
+            }
+            showCarrinho(carrinho)
+        }
+
+        function displayTabela(dados) {
+            let trs = ""
+            for (let indice in dados) {
+                trs += `<tr>
+                            <td>${dados[indice].id}</td>
+                            <td>${dados[indice].descricao}</td>
+                            <td>${dados[indice].preco}</td>
+                            <td>${dados[indice].estoque}</td>
+                            <td><button onclick=efetivarGravacaoItem(${dados[indice].id})>+</button></td>
+                        </tr>`
+            }
+            document.getElementsByTagName("tbody")[0].innerHTML = trs;
+        }
+    </script>
+</body>
+
+</html>
