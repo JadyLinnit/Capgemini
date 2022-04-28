@@ -1,0 +1,45 @@
+{
+  "produtos": [
+    {
+      "descricao": "Café",
+      "preco": 12,
+      "estoque": 25,
+      "id": 4
+    },
+    {
+      "descricao": "Arroz",
+      "preco": "10",
+      "estoque": "30",
+      "id": 5
+    },
+    {
+      "descricao": "Feijão",
+      "preco": "20",
+      "estoque": "30",
+      "id": 6
+    },
+    {
+      "descricao": "Macarrão",
+      "preco": "10",
+      "estoque": "25",
+      "id": 7
+    }
+  ],
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana@email.com",
+      "senha": "123",
+      "perfil": "ADM"
+    },
+    {
+      "id": 2,
+      "nome": "Paulo",
+      "email": "paulo@email.com",
+      "senha": "123",
+      "perfil": "USER"
+    }
+  ],
+  "carrinho": []
+}

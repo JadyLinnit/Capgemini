@@ -1,0 +1,9 @@
+<nav class="container-fluid bg-dark p-1">
+  <a class="btn btn-outline-info m-2" routerLink="home"><i class="material-icons">home</i></a>
+  <a *ngIf="userLogado.perfil=='ADM'" class="btn btn-outline-info m-2" routerLink="cadastroproduto">Produto</a>
+  <a *ngIf="userLogado.perfil=='ADM' || userLogado.perfil=='USUARIO'" class="btn btn-outline-info m-2" routerLink="carrinho">Carrinho</a>
+  <a *ngIf="!userLogado.email" class="btn btn-outline-info m-2" routerLink="login">Login</a>
+  <a *ngIf="userLogado.email" class="btn btn-outline-info m-2" (click)="logout()">Logout</a>
+  <label *ngIf="!userLogado.email" class="bg-white">{{ userLogado.email }}</label>
+</nav>
+<router-outlet></router-outlet>
