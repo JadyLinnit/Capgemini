@@ -14,7 +14,7 @@ export class ProdutoService {
   }
 
   getAll(){
-    let url = 'http://localhost:3000/produtos'
+    let url = 'http://localhost:8081/produtos'
    return this.http.get(url)
   }
 
